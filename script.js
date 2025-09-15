@@ -1,49 +1,52 @@
 let errorsData = [];
 
-// Load JSON khi mở web
-fetch('data.json')
+// Load JSON
+fetch("data.json")
   .then(response => response.json())
   .then(data => {
     errorsData = data;
-    renderErrorList(errorsData);
-  })
-  .catch(err => console.error("Error loading JSON:", err));
+    displayErrors(errorsData);
+  });
 
-function renderErrorList(data) {
-  const list = document.getElementById("error-list");
-  list.innerHTML = "";
-  data.forEach(error => {
-    const item = document.createElement("div");
-    item.className = "error-item";
-    item.innerHTML = `
-      <h3>${error.title}</h3>
-      <p>${error.description.substring(0, 80)}...</p>
+// Hiển thị danh sách lỗi
+function displayErrors(data) {
+  const container = document.getElementById("error-list");
+  container.innerHTML = "";
+
+  data.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${item.image}" alt="${item.title}">
+      <h3>${item.title}</h3>
+      <p>${item.solution.substring(0, 80)}...</p>
     `;
-    item.onclick = () => openModal(error.id);
-    list.appendChild(item);
+
+    card.addEventListener("click", () => openModal(item));
+    container.appendChild(card);
   });
 }
 
-function openModal(id) {
-  const error = errorsData.find(e => e.id === id);
-  if (!error) return;
+// Lọc theo từ khóa
+function filterErrors() {
+  const query = document.getElementById("searchBox").value.toLowerCase();
+  const filtered = errorsData.filter(item =>
+    item.title.toLowerCase().includes(query) ||
+    item.solution.toLowerCase().includes(query)
+  );
+  displayErrors(filtered);
+}
 
-  document.getElementById("modalTitle").innerText = error.title;
-  document.getElementById("modalDescription").innerText = error.description;
-  document.getElementById("modalImage").src = error.image;
-
+// Modal mở
+function openModal(item) {
+  document.getElementById("modalTitle").innerText = item.title;
+  document.getElementById("modalDescription").innerText = item.solution;
+  document.getElementById("modalImage").src = item.image;
   document.getElementById("errorModal").style.display = "block";
 }
 
+// Modal đóng
 function closeModal() {
   document.getElementById("errorModal").style.display = "none";
-}
-
-function filterErrors() {
-  const query = document.getElementById("searchBox").value.toLowerCase();
-  const filtered = errorsData.filter(e =>
-    e.title.toLowerCase().includes(query) ||
-    e.description.toLowerCase().includes(query)
-  );
-  renderErrorList(filtered);
 }
