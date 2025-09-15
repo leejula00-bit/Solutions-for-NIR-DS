@@ -1,0 +1,14 @@
+[
+  {
+    "id": "interface",
+    "title": "NIR: Can not interface results.",
+    "image": "can not interface.png",
+    "description": "Check the autointerface program is turn on already."
+  },
+  {
+    "id": "fatal",
+    "title": "NIR: NIR stop working due to fatal errol",
+    "image": "fatal.png",
+    "description": "Check computer performance. Turn off inneeded programs. Clean up database. Upgrade RAM."
+  }
+]
