@@ -10,6 +10,12 @@
     "title": "NIR: NIR stop working due to fatal errol",
     "image": "fatal.png",
     "description": "Check computer performance. Turn off unnecessary programs. Clean up database. Upgrade RAM."
+  },
+  "id": "start up",
+    "title": "NIR: ISIscan NOVA start up failed",
+    "image": "start up.png",
+    "description": "Check NIRS DS2500 core service."
   }
 ]
+
 
