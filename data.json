@@ -14,11 +14,11 @@
   {
   "id": "500 error Smartlims",
     "title": "Smartlims: Request failed with status code 500",
-    "image": "500 error smarlims.png",
-    "image": "do not upload pic.png",
+    "images": "500 error smarlims.png","do not upload pic.png",
     "description": "Do not insert any images or information other than the information from the QR code."
   },
 ]
+
 
 
 
