@@ -10,8 +10,15 @@
     "title": "NIR: ISIscan NOVA start up failed",
     "image": "start up.png",
     "description": "Check NIRS DS2500 core service."
-  }
+  },
+  {
+  "id": "500 error Smartlims",
+    "title": "Smartlims: Request failed with status code 500 ",
+    "image": "500 error Smartlims.png",
+    "description": "Do not insert any images or information other than the information from the QR code."
+    }
 ]
+
 
 
 
