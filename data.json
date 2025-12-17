@@ -22,8 +22,15 @@
     "title": "iQC: Show processing for a long time",
     "image": "processing on iQC.png",
     "description": "->delete browsing data > alltime -> select all NOT Password --> delete."
+  },
+  {
+  "id": "Bixolon printer",
+    "title": "Bixolon printer: A piece of paper was left over during the tag printing process and could not be torn off at the correct position.",
+    "image": "bixolon printer.png",
+    "description": "Choose tear off mode."
   }
 ]
+
 
 
 
